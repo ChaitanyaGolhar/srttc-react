@@ -10,6 +10,7 @@ import Community from '../components/Community'
 import Recruiters from '../components/Recruiters'
 import Testimonial from '../components/Testimonial'
 import ZenAnnouncements from '../components/ZenAnnouncements'
+import Courses from '../components/Courses'
 
 const HomePage = () => {
   return (
@@ -17,6 +18,7 @@ const HomePage = () => {
       <Navbar/>
       <ZenAnnouncements/>
       <MainHome/>
+      <Courses/>
       <Carousel/>
       <Teacher/>
       <Community/>

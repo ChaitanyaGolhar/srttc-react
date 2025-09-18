@@ -9,7 +9,7 @@ import img6 from "../assets/images/7.jpg";
 import img7 from "../assets/images/8.jpg";
 import img9 from "../assets/images/9.png";
 import img10 from "../assets/images/10.jpg";
-import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid"; // ✅ use 24, not 16
+import { ChevronLeftIcon, ChevronRightIcon } from "@heroicons/react/24/solid";
 import {
   AnimatePresence,
   MotionConfig,
@@ -31,16 +31,15 @@ export default function Carousel() {
     xSpring.set(x);
   }, [x, xSpring]);
 
-  // ✅ Auto-play effect
+  // Auto-play effect
   useEffect(() => {
     const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % images.length); // loops back to 0
-    }, 3000); // 3 seconds
+      setIndex((prev) => (prev + 1) % images.length);
+    }, 3000);
 
-    return () => clearInterval(interval); // cleanup
+    return () => clearInterval(interval);
   }, []);
 
-  // ✅ Keyboard controls (optional, still working)
   useEffect(() => {
     function handleKeyPress(e) {
       if (e.key === "ArrowLeft") {
@@ -55,54 +54,58 @@ export default function Carousel() {
   }, [index]);
 
   return (
-    <MotionConfig transition={{ type: "spring", bounce: 0 }}>
-      <div className="flex h-full flex-col justify-between">
-        <div className="relative mt-6 overflow-hidden md:mt-10">
-          <motion.div style={{ x: xPercentage }} className="flex">
-            {images.map((image, i) => (
-              <motion.img
-                key={image}
-                src={image}
-                animate={{ opacity: i === index ? 1 : 0.4 }}
-                className="aspect-[1.85] h-screen max-h-[70vh] w-full flex-shrink-0 object-cover"
-              />
-            ))}
-          </motion.div>
+    // --- ✅ ADDED WRAPPER FOR CONSTRAINED WIDTH ---
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+      <MotionConfig transition={{ type: "spring", bounce: 0 }}>
+        <div className="flex h-full flex-col justify-between">
+          <div className="relative mt-6 overflow-hidden rounded-xl md:mt-10">
+            <motion.div style={{ x: xPercentage }} className="flex">
+              {images.map((image, i) => (
+                <motion.img
+                  key={image}
+                  src={image}
+                  animate={{ opacity: i === index ? 1 : 0.4 }}
+                  // --- ✅ REMOVED 'h-screen' for better fit ---
+                  className="aspect-[1.85] max-h-[70vh] w-full flex-shrink-0 object-cover"
+                />
+              ))}
+            </motion.div>
 
-          <AnimatePresence initial={false}>
-            {index > 0 && (
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
-                exit={{ opacity: 0, pointerEvents: "none" }}
-                whileHover={{ opacity: 1 }}
-                className="absolute left-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white"
-                onClick={() => setIndex(index - 1)}
-              >
-                <ChevronLeftIcon className="h-6 w-6 text-black" />
-              </motion.button>
-            )}
-          </AnimatePresence>
+            <AnimatePresence initial={false}>
+              {index > 0 && (
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.7 }}
+                  exit={{ opacity: 0, pointerEvents: "none" }}
+                  whileHover={{ opacity: 1 }}
+                  className="absolute left-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white"
+                  onClick={() => setIndex(index - 1)}
+                >
+                  <ChevronLeftIcon className="h-6 w-6 text-black" />
+                </motion.button>
+              )}
+            </AnimatePresence>
 
-          <AnimatePresence initial={false}>
-            {index + 1 < images.length && (
-              <motion.button
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 0.7 }}
-                exit={{ opacity: 0, pointerEvents: "none" }}
-                whileHover={{ opacity: 1 }}
-                className="absolute right-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white"
-                onClick={() => setIndex(index + 1)}
-              >
-                <ChevronRightIcon className="h-6 w-6 text-black" />
-              </motion.button>
-            )}
-          </AnimatePresence>
+            <AnimatePresence initial={false}>
+              {index + 1 < images.length && (
+                <motion.button
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 0.7 }}
+                  exit={{ opacity: 0, pointerEvents: "none" }}
+                  whileHover={{ opacity: 1 }}
+                  className="absolute right-2 top-1/2 -mt-4 flex h-8 w-8 items-center justify-center rounded-full bg-white"
+                  onClick={() => setIndex(index + 1)}
+                >
+                  <ChevronRightIcon className="h-6 w-6 text-black" />
+                </motion.button>
+              )}
+            </AnimatePresence>
+          </div>
+
+          <Thumbnails index={index} setIndex={setIndex} />
         </div>
-
-        <Thumbnails index={index} setIndex={setIndex} />
-      </div>
-    </MotionConfig>
+      </MotionConfig>
+    </div>
   );
 }
 
@@ -124,7 +127,7 @@ function Thumbnails({ index, setIndex }) {
   }, [x, xSpring]);
 
   return (
-    <div className="mb-6 flex h-12 justify-center overflow-hidden">
+    <div className="mb-6 mt-6 flex h-12 justify-center overflow-hidden">
       <motion.div
         style={{
           aspectRatio: FULL_ASPECT_RATIO,
@@ -150,7 +153,7 @@ function Thumbnails({ index, setIndex }) {
                 marginRight: 0,
               },
             }}
-            className="h-full shrink-0"
+            className="h-full shrink-0 rounded-md overflow-hidden"
             key={image}
           >
             <img alt="" src={image} className="h-full object-cover" />
