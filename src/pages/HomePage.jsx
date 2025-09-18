@@ -15,7 +15,6 @@ import Courses from '../components/Courses'
 const HomePage = () => {
   return (
     <>
-      <Navbar/>
       <ZenAnnouncements/>
       <MainHome/>
       <Courses/>
