@@ -9,11 +9,13 @@ import Teacher from '../components/Teacher'
 import Community from '../components/Community'
 import Recruiters from '../components/Recruiters'
 import Testimonial from '../components/Testimonial'
+import ZenAnnouncements from '../components/ZenAnnouncements'
 
 const HomePage = () => {
   return (
     <>
       <Navbar/>
+      <ZenAnnouncements/>
       <MainHome/>
       <Carousel/>
       <Teacher/>
