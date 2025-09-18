@@ -1,125 +1,81 @@
 // src/components/MainHome.jsx
-import { ChevronRight, Code2, Globe, Quote } from 'lucide-react';
-
-// --- Image Imports (Commented Out for now) ---
-// import imageCenter from '../assets/images/career-center.jpg';
-// import imageLeft from '../assets/images/career-left.jpg';
-// import imageRight from '../assets/images/career-right.jpg';
-// import imageFarRight from '../assets/images/career-far-right.jpg';
-
-// Reusable Floating Icon Component
-const FloatingIcon = ({ icon, colorClass, positionClass }) => {
-  const glowClass = colorClass === 'text-orange-500' 
-    ? 'shadow-[0_0_30px_rgba(249,115,22,0.4)]' 
-    : 'shadow-[0_0_30px_rgba(16,185,129,0.4)]';
-
-  return (
-    <div className={`absolute ${positionClass} hidden lg:block`}>
-      <div className={`relative flex items-center justify-center w-14 h-14 border rounded-xl ${colorClass} border-current`}>
-        {icon}
-        <div className={`absolute w-full h-full rounded-xl ${glowClass} opacity-70`}></div>
-      </div>
-    </div>
-  );
-};
+import { useState } from 'react';
+import { ChevronRight, Calendar, Users } from 'lucide-react';
 
 export const MainHome = () => {
-  // Gradient classes for placeholders
-  const gradient1 = "bg-gradient-to-br from-purple-500 to-indigo-600";
-  const gradient2 = "bg-gradient-to-br from-teal-400 to-emerald-600";
-  const gradient3 = "bg-gradient-to-br from-orange-400 to-red-500";
-  const gradient4 = "bg-gradient-to-br from-sky-400 to-blue-600";
-
+  const [isImageHovered, setIsImageHovered] = useState(false);
+  const [isAboutHovered, setIsAboutHovered] = useState(false);
+  const [isContactHovered, setIsContactHovered] = useState(false);
+  const [isDiscoverHovered, setIsDiscoverHovered] = useState(false);
 
   return (
-    <section className="bg-white py-12 sm:py-16 overflow-hidden"> {/* Reduced vertical padding */}
-      <div className="container mx-auto px-4 relative">
-        
-        {/* Breadcrumbs */}
-        <div className="flex items-center justify-center text-xs font-semibold tracking-wider mb-4 lg:mb-6"> {/* Reduced margin-bottom */}
-          <span className="text-gray-500">HOME</span>
-          <ChevronRight size={14} className="text-gray-400 mx-1" /> {/* Smaller icon */}
-          <span className="text-emerald-500">Career</span>
-        </div>
-
-        {/* Floating Icons - Adjusted positions and sizes for conciseness */}
-        <FloatingIcon 
-          icon={<Code2 size={24} />} 
-          colorClass="text-orange-500" 
-          positionClass="top-[5%] left-[10%] transform -rotate-12" 
-        />
-        <FloatingIcon 
-          icon={<Globe size={24} />} 
-          colorClass="text-emerald-500" 
-          positionClass="top-[5%] right-[10%] transform rotate-12" 
-        />
-
-        {/* Main Title and Subtitle */}
-        <div className="text-center max-w-2xl mx-auto"> {/* Max width for more conciseness */}
-          <h1 className="text-4xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight"> {/* Removed lg:text-6xl, adjusted leading */}
-            Build Your Future with Us
-          </h1>
-          <p className="mt-3 text-base text-slate-600"> {/* Reduced margin-top, smaller text */}
-            Discover exciting opportunities and grow your career in a thriving environment.
-          </p>
-        </div>
-
-        {/* Image Collage Section - now with color gradients */}
-        <div className="mt-12 lg:mt-16"> {/* Reduced margin-top */}
-          <div className="relative max-w-4xl mx-auto aspect-[4/3] sm:aspect-[2/1] lg:aspect-[3/2]"> {/* Adjusted max-width */}
+    <section className="bg-white py-12 sm:py-16">
+      <div className="max-w-6xl mx-auto px-4">
+        <div className="flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
+          {/* Left Content */}
+          <div className="w-full lg:w-1/2">
+            <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4">
+              Empowering Minds, <span className="text-emerald-600">Inspiring Futures</span>
+            </h1>
+            <p className="text-lg text-gray-700 mb-8">
+              Welcome to St. Ignatius College School! Get ready for another year of learning and growing together. We're excited to have you here!
+            </p>
             
-            {/* Quote Bubble */}
-            <div className="absolute z-30 top-0 left-[0%] lg:left-[-5%] w-60 bg-white rounded-xl shadow-xl p-4 border-l-4 border-emerald-400"> {/* Adjusted position, smaller padding, border-radius */}
-              <div className="absolute -top-3 -left-3 w-9 h-9 bg-emerald-400 rounded-full flex items-center justify-center"> {/* Smaller icon circle */}
-                <Quote size={18} className="text-white" /> {/* Smaller quote icon */}
+            <div className="flex flex-wrap gap-4">
+              <button
+                className={`bg-emerald-600 text-white font-medium py-3 px-6 rounded-lg transition-all duration-300 ${isAboutHovered ? '-translate-y-1 shadow-lg' : 'shadow-md'}`}
+                onMouseEnter={() => setIsAboutHovered(true)}
+                onMouseLeave={() => setIsAboutHovered(false)}
+              >
+                About School
+              </button>
+              <button
+                className={`bg-white text-emerald-600 border border-emerald-600 font-medium py-3 px-6 rounded-lg transition-all duration-300 ${isContactHovered ? '-translate-y-1 shadow-lg' : 'shadow-md'}`}
+                onMouseEnter={() => setIsContactHovered(true)}
+                onMouseLeave={() => setIsContactHovered(false)}
+              >
+                Contact Us
+              </button>
+            </div>
+          </div>
+          
+          {/* Right Content */}
+          <div className="w-full lg:w-1/2">
+            <div 
+              className="relative rounded-xl overflow-hidden shadow-lg transition-all duration-500"
+              onMouseEnter={() => setIsImageHovered(true)}
+              onMouseLeave={() => setIsImageHovered(false)}
+            >
+              {/* Image */}
+              <div className="relative h-80 sm:h-96 bg-gray-100 flex items-center justify-center overflow-hidden">
+                <img 
+                  src="https://z-cdn-media.chatglm.cn/files/a1036f96-6ea2-440f-a670-3f5852f9da2d_Screenshot%202025-09-18%20193159.png?auth_key=1789741383-850b023717934a8c84f920615c24ae59-0-fc754886b77d2c1eb57d4d178183f1cb"
+                  alt="Students in school hallway"
+                  className={`w-full h-full object-cover transition-transform duration-500 ${isImageHovered ? 'scale-105' : 'scale-100'}`}
+                />
+                <div className={`absolute inset-0 bg-black bg-opacity-20 transition-opacity duration-500 ${isImageHovered ? 'opacity-0' : 'opacity-100'}`}></div>
               </div>
-              <p className="text-slate-700 text-xs mt-3"> {/* Smaller text */}
-                At Coreik, we merge creativity with strategy to craft digital experiences that captivate and perform.
-              </p>
-            </div>
-            
-            {/* Image 1 (Center) - Now Gradient */}
-            <div className="absolute z-10 w-[55%] sm:w-[50%] lg:w-[45%] top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-xl shadow-2xl overflow-hidden">
-                <div className={`${gradient1} w-full h-full flex items-center justify-center text-white text-xl font-bold`}>
-                    {/* Placeholder text or icon */}
+              
+              {/* Yellow Announcement Bar */}
+              <div className="bg-yellow-400 p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <Calendar className="text-yellow-800" size={24} />
+                  <div>
+                    <p className="font-bold text-yellow-900">July 4 PA Day</p>
+                    <p className="text-sm text-yellow-800">For Elementary and Secondary Schools</p>
+                  </div>
                 </div>
-                {/* <img src={imageCenter} alt="Team collaborating in an office" className="w-full h-full object-cover"/>
-                */}
+                <button
+                  className={`bg-yellow-500 hover:bg-yellow-600 text-yellow-900 font-medium py-2 px-5 rounded-lg transition-all duration-300 ${isDiscoverHovered ? '-translate-y-1 shadow-md' : 'shadow-sm'}`}
+                  onMouseEnter={() => setIsDiscoverHovered(true)}
+                  onMouseLeave={() => setIsDiscoverHovered(false)}
+                >
+                  Discover Event
+                </button>
+              </div>
             </div>
-
-            {/* Image 2 (Left) - Now Gradient */}
-            <div className="absolute z-20 w-[35%] sm:w-[30%] lg:w-[28%] top-[45%] left-0 transform -translate-y-1/2 rounded-xl shadow-xl overflow-hidden">
-                <div className={`${gradient2} w-full h-full flex items-center justify-center text-white text-lg font-bold`}>
-                    {/* Placeholder text or icon */}
-                </div>
-                {/*
-                <img src={imageLeft} alt="Creative workspace" className="w-full h-full object-cover"/>
-                */}
-            </div>
-            
-            {/* Image 3 (Right) - Now Gradient */}
-            <div className="absolute z-20 w-[35%] sm:w-[30%] lg:w-[28%] top-[55%] right-0 transform -translate-y-1/2 rounded-xl shadow-xl overflow-hidden">
-                <div className={`${gradient3} w-full h-full flex items-center justify-center text-white text-lg font-bold`}>
-                    {/* Placeholder text or icon */}
-                </div>
-                {/*
-                <img src={imageRight} alt="Two colleagues working together" className="w-full h-full object-cover"/>
-                */}
-            </div>
-
-            {/* Image 4 (Far Right, behind) - Now Gradient */}
-            <div className="absolute z-0 w-[25%] sm:w-[20%] lg:w-[22%] top-1/2 right-[-5%] sm:right-[-2%] transform -translate-y-1/2 hidden sm:block rounded-xl shadow-lg overflow-hidden">
-                <div className={`${gradient4} w-full h-full flex items-center justify-center text-white text-base font-bold`}>
-                    {/* Placeholder text or icon */}
-                </div>
-                {/*
-                <img src={imageFarRight} alt="Another office view" className="w-full h-full object-cover"/>
-                */}
-            </div>
-
           </div>
         </div>
-
       </div>
     </section>
   );

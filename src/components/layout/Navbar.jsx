@@ -1,113 +1,105 @@
 import { useState, useEffect } from 'react'; // Import useEffect
 import { Menu, X, ChevronDown } from 'lucide-react';
 
-// --- Navigation Data (remains the same) ---
+
 const navLinks = [
-    // ...your navLinks data here...
-    { name: 'Home', href: '/' },
-    {
-        name: 'Our SRTTC',
-        subMenu: [
-            { name: 'About SRTTC', href: '/about' },
-            { name: 'Mission & Vision', href: '/vision' },
-            { name: 'Governing Body', href: '/governing-body' },
-            { name: 'Principal’s Desk', href: '/principal-desk' },
-            { name: 'Infrastructure', href: '/infrastructure' },
-            { name: 'Institute Office', href: '/office' },
-        ],
-    },
-    {
-        name: 'Academics',
-        subMenu: [
-            { name: 'Programs Offered', href: '/academics/programs' },
-            { name: 'Departments', href: '/academics/departments' },
-            { name: 'Academic Calendar', href: '/academics/calendar' },
-            { name: 'Examination Cell', href: '/academics/exam-cell' },
-            { name: 'Research & Development', href: '/academics/research' },
-            { name: 'Library', href: '/academics/library' },
-            { name: 'Virtual Labs', href: '/academics/virtual-labs' },
-        ],
-    },
-    {
-        name: 'Admissions',
-        highlight: true, // This keeps the red background
-        subMenu: [
-            { name: 'Admission Procedure', href: '/admissions/procedure' },
-            { name: 'Eligibility Criteria', href: '/admissions/eligibility' },
-            { name: 'Fee Structure', href: '/admissions/fees' },
-            { name: 'Anti-Ragging', href: '/admissions/anti-ragging' },
-            { name: 'Prospectus', href: '/admissions/prospectus' },
-            { name: 'Scholarship Information', href: '/admissions/scholarships' },
-        ],
-    },
-    {
-        name: 'Departments',
-        subMenu: [
-            { name: 'Computer Engineering', href: '/departments/comp' },
-            { name: 'Mechanical Engineering', href: '/departments/mech' },
-            { name: 'Civil Engineering', href: '/departments/civil' },
-            { name: 'AI & DS', href: '/departments/ai-ds' },
-            { name: 'CSE (Data Science)', href: '/departments/cse-ds' },
-            { name: 'Applied Science & Humanities', href: '/departments/ash' },
-        ],
-    },
-    {
-        name: 'For Students',
-        subMenu: [
-            { name: 'Learning Management System', href: '/students/lms' },
-            { name: 'Feedback', href: '/students/feedback' },
-            { name: 'Alumni Portal', href: '/students/alumni' },
-            { name: 'Library', href: '/students/library' },
-            { name: 'Online Grievance', href: '/students/grievance' },
-            { name: 'Media Coverage', href: '/students/media' },
-            { name: 'Student Development Cell', href: '/students/sdc' },
-            { name: 'Pay Fee Online', href: '/students/pay-fee' },
-        ],
-    },
-    {
-        name: 'Training & Placement',
-        subMenu: [
-            { name: 'About T&P Cell', href: '/placements/about' },
-            { name: 'Placement Procedure', href: '/placements/procedure' },
-            { name: 'Major Recruiters', href: '/placements/recruiters' },
-            { name: 'Training Activities', href: '/placements/training' },
-            { name: 'Placement Statistics', href: '/placements/stats' },
-        ],
-    },
-    {
-        name: 'Downloads',
-        subMenu: [
-            { name: 'SPPU Syllabus', href: '/downloads/sppu-syllabus' },
-            { name: 'Old Question Papers', href: '/downloads/old-papers' },
-            { name: 'In-sem/End-sem Papers', href: '/downloads/exam-papers' },
-            { name: 'Fee Structure', href: '/downloads/fees' },
-            { name: 'Academic Calendar', href: '/downloads/calendar' },
-            { name: 'ISO Forms', href: '/downloads/iso' },
-        ],
-    },
-    {
-        name: 'Quick Links',
-        subMenu: [
-            { name: 'SPPU', href: 'http://www.unipune.ac.in/' },
-            { name: 'MSBTE', href: 'https://msbte.org.in/' },
-            { name: 'DTE Portal', href: 'http://dte.maharashtra.gov.in/' },
-            { name: 'MahaDBT', href: 'https://mahadbtmahait.gov.in/' },
-            { name: 'Admission Portal', href: 'https://cetcell.mahacet.org/' },
-            { name: 'Student Feedback', href: '/links/feedback' },
-            { name: 'NPTEL', href: 'https://nptel.ac.in/' },
-            { name: 'AICTE', href: 'https://www.aicte-india.org/' },
-        ],
-    },
-    {
-        name: 'Contact Us',
-        subMenu: [
-            { name: 'Institute Contact', href: '/contact/institute' },
-            { name: 'Location Map', href: '/contact/map' },
-            { name: 'Office Directory', href: '/contact/directory' },
-            { name: 'Email IDs', href: '/contact/emails' },
-        ],
-    },
+  { name: 'Home', href: '/' },
+
+  {
+    name: 'Our SRTTC',
+    subMenu: [
+      { name: 'About SRTTC', href: '/about' },
+      { name: 'Mission & Vision', href: '/vision' },
+      { name: 'Governing Body', href: '/governing-body' },
+      { name: 'Principal’s Desk', href: '/principal-desk' },
+      { name: 'Infrastructure', href: '/infrastructure' },
+      { name: 'Institute Office', href: '/office' },
+    ],
+  },
+
+  {
+    name: 'Academics',
+    subMenu: [
+      { name: 'Academic Calendar', href: '/academics/calendar' },
+      { name: 'Examination Cell', href: '/academics/exam-cell' },
+      { name: 'Research & Development', href: '/academics/research' },
+      { name: 'Library', href: '/academics/library' },
+      { name: 'Virtual Labs', href: '/academics/virtual-labs' },
+    ],
+  },
+
+  {
+    name: 'Admissions',
+    highlight: true,
+    subMenu: [
+      { name: 'Admission Procedure', href: '/admissions/procedure' },
+      { name: 'Eligibility Criteria', href: '/admissions/eligibility' },
+      { name: 'Fee Structure', href: '/admissions/fees' },
+      { name: 'Anti-Ragging', href: '/admissions/anti-ragging' },
+      { name: 'Prospectus', href: '/admissions/prospectus' },
+      { name: 'Scholarship Information', href: '/admissions/scholarships' },
+    ],
+  },
+
+  {
+    name: 'Departments',
+    subMenu: [
+      { name: 'DESH (FE)', href: '/departments/desh' },
+      { name: 'Computer Engineering', href: '/departments/comp' },
+      { name: 'Mechanical Engineering', href: '/departments/mech' },
+      { name: 'Civil Engineering', href: '/departments/civil' },
+      { name: 'AI & DS', href: '/departments/ai-ds' },
+      { name: 'CSE (Data Science)', href: '/departments/cse-ds' },
+      { name: 'Applied Science & Humanities', href: '/departments/ash' },
+    ],
+  },
+
+  {
+    name: 'For Students',
+    subMenu: [
+      { name: 'Learning Management System', href: '/students/lms' },
+      { name: 'Feedback', href: '/students/feedback' },
+      { name: 'Student Development Cell', href: '/students/sdc' },
+      { name: 'Pay Fee Online', href: '/students/pay-fee' },
+    ],
+  },
+
+  {
+    name: 'Training & Placement',
+    subMenu: [
+      { name: 'About T&P Cell', href: '/placements/about' },
+      { name: 'Placement Procedure', href: '/placements/procedure' },
+      { name: 'Major Recruiters', href: '/placements/recruiters' },
+      { name: 'Training Activities', href: '/placements/training' },
+    ],
+  },
+
+  {
+    name: 'Downloads',
+    subMenu: [
+      { name: 'SPPU Syllabus', href: '/downloads/sppu-syllabus' },
+      { name: 'Old Question Papers', href: '/downloads/old-papers' },
+      { name: 'In-sem/End-sem Papers', href: '/downloads/exam-papers' },
+    ],
+  },
+
+  {
+    name: 'Quick Links',
+    subMenu: [
+      { name: 'SPPU', href: 'http://www.unipune.ac.in/' },
+      { name: 'MSBTE', href: 'https://msbte.org.in/' },
+      { name: 'DTE Portal', href: 'http://dte.maharashtra.gov.in/' },
+      { name: 'MahaDBT', href: 'https://mahadbtmahait.gov.in/' },
+      { name: 'Admission Portal', href: 'https://cetcell.mahacet.org/' },
+      { name: 'Student Feedback', href: '/links/feedback' },
+      { name: 'NPTEL', href: 'https://nptel.ac.in/' },
+      { name: 'AICTE', href: 'https://www.aicte-india.org/' },
+    ],
+  },
+
+  { name: 'Contact Us',href: '/contact'},
 ];
+
 
 export const Navbar = () => {
   const [isMobileMenuOpen, setMobileMenuOpen] = useState(false);

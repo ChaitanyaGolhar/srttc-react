@@ -26,9 +26,8 @@ const ContactPage = () => {
   ];
 
   return (
-    // This outer div provides the page background, allowing the main content to be centered
-    <div className="bg-white py-12 sm:py-20">
-      <main className="max-w-7xl mx-auto bg-[#F0F5F8] rounded-2xl shadow-sm p-8 sm:p-12 md:p-16">
+    <div className="min-h-screen bg-white">
+      <main className="max-w-7xl mt-5 mx-auto bg-[#F0F5F8] rounded-2xl shadow-sm p-4 sm:p-8 md:p-12">
 
         {/* --- Page Title Section --- */}
         <motion.section
