@@ -1,0 +1,25 @@
+export const testimonialsData = [
+  { quote: "SRTTC's labs and guidance shaped my coding skills and gave me confidence.", name: "Muskan Sharma", title: "CSE, 2023 - Software Engineer, Microsoft", avatar: "/avatars/muskan.png" },
+  { quote: "Strong E&TC foundation at SRTTC helped me crack GATE and pursue IIT research.", name: "Aditya Jadhav", title: "E&TC, 2022 - Research Scholar, IIT Bombay", avatar: "/avatars/aditya.png" },
+  { quote: "Workshops and mentorship here opened doors for my career at Tata Motors.", name: "Hassan Shan", title: "Mechanical, 2023 - Graduate Trainee Engineer, Tata Motors", avatar: "/avatars/Hassan.png" },
+  { quote: "Projects and visits at SRTTC helped me secure M.Tech admission in NIT.", name: "Sakshi Lohade", title: "Civil, 2021 - M.Tech, NIT Trichy", avatar: "/avatars/sakshi.png" },
+  { quote: "Hackathons and coding clubs pushed me closer to my dream career.", name: "Rohit Patil", title: "IT, 2022 - Data Analyst, Infosys", avatar: "/avatars/rohit.png" },
+  { quote: "Hands-on labs and support prepared me for global companies like Bosch.", name: "Sayali Jarande", title: "E&TC, 2023 - Embedded Engineer, Bosch", avatar: "/avatars/sayali.png" },
+  { quote: "Workshops and mentorship here opened doors for my career at Tata Motors.", name: "Hassan Shan", title: "Mechanical, 2023 - Graduate Trainee Engineer, Tata Motors", avatar: "/avatars/Hassan.png" },
+  { quote: "Projects and visits at SRTTC helped me secure M.Tech admission in NIT.", name: "Sakshi Lohade", title: "Civil, 2021 - M.Tech, NIT Trichy", avatar: "/avatars/sakshi.png" },
+  { quote: "Hackathons and coding clubs pushed me closer to my dream career.", name: "Rohit Patil", title: "IT, 2022 - Data Analyst, Infosys", avatar: "/avatars/rohit.png" },
+  { quote: "Hands-on labs and support prepared me for global companies like Bosch.", name: "Sayali Jarande", title: "E&TC, 2023 - Embedded Engineer, Bosch", avatar: "/avatars/sayali.png" },
+  { quote: "Workshops and mentorship here opened doors for my career at Tata Motors.", name: "Hassan Shan", title: "Mechanical, 2023 - Graduate Trainee Engineer, Tata Motors", avatar: "/avatars/Hassan.png" },
+  { quote: "Projects and visits at SRTTC helped me secure M.Tech admission in NIT.", name: "Sakshi Lohade", title: "Civil, 2021 - M.Tech, NIT Trichy", avatar: "/avatars/sakshi.png" },
+  { quote: "Hackathons and coding clubs pushed me closer to my dream career.", name: "Rohit Patil", title: "IT, 2022 - Data Analyst, Infosys", avatar: "/avatars/rohit.png" },
+  { quote: "Hands-on labs and support prepared me for global companies like Bosch.", name: "Sayali Jarande", title: "E&TC, 2023 - Embedded Engineer, Bosch", avatar: "/avatars/sayali.png" },
+  { quote: "Workshops and mentorship here opened doors for my career at Tata Motors.", name: "Hassan Shan", title: "Mechanical, 2023 - Graduate Trainee Engineer, Tata Motors", avatar: "/avatars/Hassan.png" },
+  { quote: "Projects and visits at SRTTC helped me secure M.Tech admission in NIT.", name: "Sakshi Lohade", title: "Civil, 2021 - M.Tech, NIT Trichy", avatar: "/avatars/sakshi.png" },
+  { quote: "Hackathons and coding clubs pushed me closer to my dream career.", name: "Rohit Patil", title: "IT, 2022 - Data Analyst, Infosys", avatar: "/avatars/rohit.png" },
+  { quote: "Hands-on labs and support prepared me for global companies like Bosch.", name: "Sayali Jarande", title: "E&TC, 2023 - Embedded Engineer, Bosch", avatar: "/avatars/sayali.png" },
+  { quote: "Workshops and mentorship here opened doors for my career at Tata Motors.", name: "Hassan Shan", title: "Mechanical, 2023 - Graduate Trainee Engineer, Tata Motors", avatar: "/avatars/Hassan.png" },
+  { quote: "Projects and visits at SRTTC helped me secure M.Tech admission in NIT.", name: "Sakshi Lohade", title: "Civil, 2021 - M.Tech, NIT Trichy", avatar: "/avatars/sakshi.png" },
+  { quote: "Hackathons and coding clubs pushed me closer to my dream career.", name: "Rohit Patil", title: "IT, 2022 - Data Analyst, Infosys", avatar: "/avatars/rohit.png" },
+  { quote: "Hands-on labs and support prepared me for global companies like Bosch.", name: "Sayali Jarande", title: "E&TC, 2023 - Embedded Engineer, Bosch", avatar: "/avatars/sayali.png" }
+  // ... add the rest of your data here
+];
