@@ -49,7 +49,7 @@ export const MainHome = () => {
               {/* Image */}
               <div className="relative h-80 sm:h-96 bg-gray-100 flex items-center justify-center overflow-hidden">
                 <img 
-                  src="https://z-cdn-media.chatglm.cn/files/a1036f96-6ea2-440f-a670-3f5852f9da2d_Screenshot%202025-09-18%20193159.png?auth_key=1789741383-850b023717934a8c84f920615c24ae59-0-fc754886b77d2c1eb57d4d178183f1cb"
+                  src=""
                   alt="Students in school hallway"
                   className={`w-full h-full object-cover transition-transform duration-500 ${isImageHovered ? 'scale-105' : 'scale-100'}`}
                 />

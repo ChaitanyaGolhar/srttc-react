@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+@theme {
+  /* St. Ignatius brand red */
+  --color-brand-red: #c31f3a;
+}   

@@ -42,7 +42,7 @@ import CseDsPage from './pages/Departments/CseDsPage.jsx';
 
 
 // For Students
-import LmsPage from './pages/Students/LmsPage.jsx';
+import LMS from './pages/Students/LMS.jsx';
 import FeedbackPage from './pages/Students/FeedbackPage.jsx';
 import SdcPage from './pages/Students/SdcPage.jsx';
 import PayFeePage from './pages/Students/PayFeePage.jsx';
@@ -108,7 +108,7 @@ const App = () => {
         
 
         {/* For Students */}
-        <Route path="/students/lms" element={<LmsPage />} />
+        <Route path="/students/lms" element={<LMS />} />
         <Route path="/students/feedback" element={<FeedbackPage />} />
         <Route path="/students/sdc" element={<SdcPage />} />
         <Route path="/students/pay-fee" element={<PayFeePage />} />

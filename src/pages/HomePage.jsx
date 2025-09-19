@@ -11,6 +11,7 @@ import Recruiters from '../components/Recruiters'
 import Testimonial from '../components/Testimonial'
 import ZenAnnouncements from '../components/ZenAnnouncements'
 import Courses from '../components/Courses'
+import Faculty from '../components/Faculty'
 
 const HomePage = () => {
   return (
@@ -20,6 +21,7 @@ const HomePage = () => {
       <Courses/>
       <Carousel/>
       <Teacher/>
+      <Faculty/>
       <Community/>
       <Recruiters/>
       <Testimonial/>
