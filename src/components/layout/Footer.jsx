@@ -1,20 +1,20 @@
 import React, { useEffect, useRef, useCallback, useState } from 'react';
 
-// --- ICON COMPONENTS ---
-// In a real project, these would come from a library like lucide-react.
-const Icon = ({ path, ...props }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
-        <path d={path} />
-    </svg>
-);
-const FacebookIcon = (props) => <Icon path="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" {...props} />;
-const TwitterIcon = (props) => <Icon path="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" {...props} />;
-const LinkedinIcon = (props) => <Icon path="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zM4 6a2 2 0 1 0 0-4 2 2 0 0 0 0 4z" {...props} />;
-const InstagramIcon = (props) => <Icon path="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37zM17.5 6.5h.01" {...props} />;
+// --- IMPORT YOUR ICONS AND LOGO ---
+import facebookIcon from '../../assets/icons/facebook.svg';
+import twitterIcon from '../../assets/icons/twitter.svg';
+import linkedinIcon from '../../assets/icons/linkedin.svg';
+import instagramIcon from '../../assets/icons/instagram.svg';
+
+
+const FacebookIcon = (props) => <img src={facebookIcon} alt="Facebook" className="w-5 h-5" {...props} />;
+const TwitterIcon = (props) => <img src={twitterIcon} alt="Twitter" className="w-5 h-5" {...props} />;
+const LinkedinIcon = (props) => <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5" {...props} />;
+const InstagramIcon = (props) => <img src={instagramIcon} alt="Instagram" className="w-5 h-5" {...props} />;
+
 
 
 // --- DATA CONFIGURATION ---
-// Centralizing data makes the component easier to update and maintain.
 const academicsLinks = ["Departments", "Programs Offered", "SPPU Syllabus", "Academic Calendar"];
 const quickLinks = ["DTE Portal", "SPPU", "Online Grievance", "Student Feedback"];
 const socialLinks = [
@@ -25,7 +25,6 @@ const socialLinks = [
 ];
 
 // --- REUSABLE SUB-COMPONENTS ---
-// Breaking the UI into smaller components improves readability.
 const FooterColumn = ({ title, links }) => (
     <div>
         <h3 className="font-semibold text-lg text-gray-900 mb-4 tracking-wide">{title}</h3>
@@ -172,10 +171,9 @@ const Footer = () => {
         };
     }, [handleMouseMove]);
 
-    const mapQuery = "Gat. No. 81,82,91-94,97,99,101,102 & 106(Part), Malwadi, Pune - 410405";
-    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
+    const mapQuery = "Suman Ramesh Tulsiani Technical Campus, Kamshet, Maharashtra, India";
+    const googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(mapQuery)}`;
     
-    // Helper function for animation classes
     const getAnimationClass = (delay) => {
         return `transition-all duration-700 ${isVisible ? `opacity-100 translate-y-0 delay-${delay}` : 'opacity-0 translate-y-10'}`;
     };
@@ -189,7 +187,7 @@ const Footer = () => {
                         <div className={getAnimationClass('0')}>
                             <div className="flex flex-col space-y-4">
                                 <div className="flex items-center space-x-3">
-                                    <img src="https://placehold.co/40x40/E5E7EB/1F2937?text=S" alt="SRTTC Logo" className="w-10 h-10 rounded-full" />
+                                    <img src="/logo.png" alt="SRTTC Logo" className="w-10 h-10 rounded-full" />
                                     <span className="font-bold text-xl text-black tracking-wider">SRTTC</span>
                                 </div>
                                 <p className="text-sm leading-relaxed text-gray-700">An AICTE approved, NAAC 'B+' accredited institute dedicated to excellence in engineering education.</p>
@@ -252,4 +250,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
