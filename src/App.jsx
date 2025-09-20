@@ -1,6 +1,23 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+
+
+import DepartmentPage from './pages/DepartmentPage.jsx';
+
+
+import { feHeroData,feStatsData,feFacultyData,feLabsData,feEventsData,fePublicationsData} from './data/feData';
+
+const feDepartmentData = {
+  heroData: feHeroData,
+  statsData: feStatsData,
+  facultyData: feFacultyData,
+  labsData: feLabsData,
+  eventsData: feEventsData,
+  publicationsData: fePublicationsData,
+};
+
+
 // Layout Components
 import Header from './components/layout/Header.jsx';
 import Footer from './components/layout/Footer.jsx';
@@ -31,15 +48,6 @@ import FeeStructurePage from './pages/Admissions/FeeStructurePage.jsx';
 import AntiRaggingPage from './pages/Admissions/AntiRaggingPage.jsx';
 import ProspectusPage from './pages/Admissions/ProspectusPage.jsx';
 import ScholarshipsPage from './pages/Admissions/ScholarshipsPage.jsx';
-
-// Departments
-import DeshPage from './pages/Departments/DeshPage.jsx';
-import ComputerEnggPage from './pages/Departments/ComputerEnggPage.jsx';
-import MechanicalEnggPage from './pages/Departments/MechanicalEnggPage.jsx';
-import CivilEnggPage from './pages/Departments/CivilEnggPage.jsx';
-import AiDsPage from './pages/Departments/AiDsPage.jsx';
-import CseDsPage from './pages/Departments/CseDsPage.jsx';
-
 
 // For Students
 import LMS from './pages/Students/LMS.jsx';
@@ -99,8 +107,8 @@ const App = () => {
         <Route path="/admissions/scholarships" element={<ScholarshipsPage />} />
 
         {/* Departments */}
-        <Route path="/departments/desh" element={<DeshPage />} />
-        <Route path="/departments/comp" element={<ComputerEnggPage />} />
+        <Route path="/departments/desh" element={<DepartmentPage departmentData={feDepartmentData} />} />
+        <Route path="/departments/comp" element={<DepartmentPage departmentData={cseDepartmentData} />} />
         <Route path="/departments/mech" element={<MechanicalEnggPage />} />
         <Route path="/departments/civil" element={<CivilEnggPage />} />
         <Route path="/departments/ai-ds" element={<AiDsPage />} />
@@ -136,3 +144,11 @@ const App = () => {
 };
 
 export default App;
+
+
+
+
+
+
+
+
