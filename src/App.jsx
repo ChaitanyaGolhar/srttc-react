@@ -9,6 +9,8 @@ import { cseHeroData, cseStatsData, cseFacultyData, cseLabsData, cseEventsData, 
 import { mechHeroData, mechStatsData, mechFacultyData, mechLabsData, mechEventsData, mechPublicationsData } from './data/mechData';
 import { civilHeroData, civilStatsData, civilFacultyData, civilLabsData, civilEventsData, civilPublicationsData } from './data/civilData';
 import { aidsHeroData, aidsStatsData, aidsFacultyData, aidsLabsData, aidsEventsData, aidsPublicationsData } from './data/aidsData';
+import { csedsHeroData, csedsStatsData, csedsFacultyData, csedsLabsData, csedsEventsData, csedsPublicationsData } from './data/csedsData';
+
 
 
 // Layout & Other Pages
@@ -26,7 +28,8 @@ const cseDepartmentData = { heroData: cseHeroData, statsData: cseStatsData, facu
 const mechDepartmentData = { heroData: mechHeroData, statsData: mechStatsData, facultyData: mechFacultyData, labsData: mechLabsData, eventsData: mechEventsData, publicationsData: mechPublicationsData };
 const civilDepartmentData = { heroData: civilHeroData, statsData: civilStatsData, facultyData: civilFacultyData, labsData: civilLabsData, eventsData: civilEventsData, publicationsData: civilPublicationsData };
 const aidsDepartmentData = { heroData: aidsHeroData, statsData: aidsStatsData, facultyData: aidsFacultyData, labsData: aidsLabsData, eventsData: aidsEventsData, publicationsData: aidsPublicationsData };
-
+const csedsDepartmentData = { heroData: csedsHeroData, statsData:csedsStatsData, facultyData: csedsFacultyData, labsData: csedsLabsData, eventsData: csedsEventsData, publicationsData: csedsPublicationsData 
+};
 
 
 
@@ -113,7 +116,7 @@ const App = () => {
         <Route path="/departments/mech" element={<DepartmentPage departmentData={mechDepartmentData} />} />
         <Route path="/departments/civil" element={<DepartmentPage departmentData={civilDepartmentData} />} />
         <Route path="/departments/ai-ds" element={<DepartmentPage departmentData={aidsDepartmentData} />} />
-        
+        <Route path="/departments/cse-ds" element={<DepartmentPage departmentData={csedsDepartmentData} />} />
 
         {/* For Students */}
         <Route path="/students/lms" element={<LMS />} />

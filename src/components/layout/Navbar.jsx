@@ -49,8 +49,7 @@ const navLinks = [
       { name: 'Mechanical Engineering', href: '/departments/mech' },
       { name: 'Civil Engineering', href: '/departments/civil' },
       { name: 'AI & DS', href: '/departments/ai-ds' },
-      { name: 'CSE (Data Science)', href: '/departments/cse-ds' },
-      { name: 'Applied Science & Humanities', href: '/departments/ash' },
+      { name: 'CSE (Data Science)', href: '/departments/cse-ds' }
     ],
   },
 

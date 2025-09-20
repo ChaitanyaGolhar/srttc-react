@@ -16,7 +16,7 @@ const HeroSection = ({ heroData, scrollToSection, aboutRef }) => {
   const parallaxY = useTransform(scrollYProgress, [0, 0.5], ['0%', '50%']);
 
   return (
-    <div className="relative h-[75vh] w-full rounded-2xl overflow-hidden">
+    <div className="relative h-[75vh] w-full mt-5 rounded-2xl overflow-hidden">
       <AnimatePresence>
         {slides.map((slide, index) => (
           index === currentSlide && (
