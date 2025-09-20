@@ -1,13 +1,29 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-
+// Import Page Template
 import DepartmentPage from './pages/DepartmentPage.jsx';
 
+// Import Data for FE Department
+import {
+  feHeroData, feStatsData, feFacultyData, feLabsData, feEventsData, fePublicationsData
+} from './data/feData';
 
-import { feHeroData,feStatsData,feFacultyData,feLabsData,feEventsData,fePublicationsData} from './data/feData';
+// Import Data for CSE Department
+import {
+  cseHeroData, cseStatsData, cseFacultyData, cseLabsData, cseEventsData, csePublicationsData
+} from './data/cseData';
 
+// Layout & Other Pages
+import Header from './components/layout/Header.jsx';
+import Footer from './components/layout/Footer.jsx';
+import { Navbar } from './components/layout/Navbar.jsx';
+import HomePage from './pages/HomePage.jsx';
+import ContactPage from './pages/ContactPage.jsx';
+import ErrorPage from './pages/ErrorPage.jsx';
+// ... import other pages as needed
+
+// Assemble the data for each department into a single object
 const feDepartmentData = {
   heroData: feHeroData,
   statsData: feStatsData,
@@ -17,14 +33,16 @@ const feDepartmentData = {
   publicationsData: fePublicationsData,
 };
 
+const cseDepartmentData = {
+  heroData: cseHeroData,
+  statsData: cseStatsData,
+  facultyData: cseFacultyData,
+  labsData: cseLabsData,
+  eventsData: cseEventsData,
+  publicationsData: csePublicationsData,
+};
 
-// Layout Components
-import Header from './components/layout/Header.jsx';
-import Footer from './components/layout/Footer.jsx';
-import { Navbar } from './components/layout/Navbar.jsx';
 
-// Home
-import HomePage from './pages/HomePage.jsx';
 
 // Our SRTTC
 import AboutPage from './pages/OurSRTTC/AboutPage.jsx';
@@ -68,10 +86,7 @@ import ExamPapersPage from './pages/Downloads/ExamPapersPage.jsx';
 
 
 
-// Contact
-import ContactPage from './pages/ContactPage.jsx';
 
-import ErrorPage from './pages/ErrorPage.jsx';
 
 
 const App = () => {
@@ -107,12 +122,18 @@ const App = () => {
         <Route path="/admissions/scholarships" element={<ScholarshipsPage />} />
 
         {/* Departments */}
-        <Route path="/departments/desh" element={<DepartmentPage departmentData={feDepartmentData} />} />
-        <Route path="/departments/comp" element={<DepartmentPage departmentData={cseDepartmentData} />} />
-        <Route path="/departments/mech" element={<MechanicalEnggPage />} />
+        <Route 
+          path="/departments/desh" 
+          element={<DepartmentPage departmentData={feDepartmentData} />} 
+        />
+        <Route 
+          path="/departments/comp" 
+          element={<DepartmentPage departmentData={cseDepartmentData} />} 
+        />
+        {/* <Route path="/departments/mech" element={<MechanicalEnggPage />} />
         <Route path="/departments/civil" element={<CivilEnggPage />} />
         <Route path="/departments/ai-ds" element={<AiDsPage />} />
-        <Route path="/departments/cse-ds" element={<CseDsPage />} />
+        <Route path="/departments/cse-ds" element={<CseDsPage />} /> */}
         
 
         {/* For Students */}
@@ -144,7 +165,6 @@ const App = () => {
 };
 
 export default App;
-
 
 
 
