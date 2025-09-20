@@ -4,15 +4,12 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 // Import Page Template
 import DepartmentPage from './pages/DepartmentPage.jsx';
 
-// Import Data for FE Department
-import {
-  feHeroData, feStatsData, feFacultyData, feLabsData, feEventsData, fePublicationsData
-} from './data/feData';
+import { feHeroData, feStatsData, feFacultyData, feLabsData, feEventsData, fePublicationsData } from './data/feData';
+import { cseHeroData, cseStatsData, cseFacultyData, cseLabsData, cseEventsData, csePublicationsData } from './data/cseData';
+import { mechHeroData, mechStatsData, mechFacultyData, mechLabsData, mechEventsData, mechPublicationsData } from './data/mechData';
+import { civilHeroData, civilStatsData, civilFacultyData, civilLabsData, civilEventsData, civilPublicationsData } from './data/civilData';
+import { aidsHeroData, aidsStatsData, aidsFacultyData, aidsLabsData, aidsEventsData, aidsPublicationsData } from './data/aidsData';
 
-// Import Data for CSE Department
-import {
-  cseHeroData, cseStatsData, cseFacultyData, cseLabsData, cseEventsData, csePublicationsData
-} from './data/cseData';
 
 // Layout & Other Pages
 import Header from './components/layout/Header.jsx';
@@ -24,23 +21,12 @@ import ErrorPage from './pages/ErrorPage.jsx';
 // ... import other pages as needed
 
 // Assemble the data for each department into a single object
-const feDepartmentData = {
-  heroData: feHeroData,
-  statsData: feStatsData,
-  facultyData: feFacultyData,
-  labsData: feLabsData,
-  eventsData: feEventsData,
-  publicationsData: fePublicationsData,
-};
+const feDepartmentData = { heroData: feHeroData, statsData: feStatsData, facultyData: feFacultyData, labsData: feLabsData, eventsData: feEventsData, publicationsData: fePublicationsData };
+const cseDepartmentData = { heroData: cseHeroData, statsData: cseStatsData, facultyData: cseFacultyData, labsData: cseLabsData, eventsData: cseEventsData, publicationsData: csePublicationsData };
+const mechDepartmentData = { heroData: mechHeroData, statsData: mechStatsData, facultyData: mechFacultyData, labsData: mechLabsData, eventsData: mechEventsData, publicationsData: mechPublicationsData };
+const civilDepartmentData = { heroData: civilHeroData, statsData: civilStatsData, facultyData: civilFacultyData, labsData: civilLabsData, eventsData: civilEventsData, publicationsData: civilPublicationsData };
+const aidsDepartmentData = { heroData: aidsHeroData, statsData: aidsStatsData, facultyData: aidsFacultyData, labsData: aidsLabsData, eventsData: aidsEventsData, publicationsData: aidsPublicationsData };
 
-const cseDepartmentData = {
-  heroData: cseHeroData,
-  statsData: cseStatsData,
-  facultyData: cseFacultyData,
-  labsData: cseLabsData,
-  eventsData: cseEventsData,
-  publicationsData: csePublicationsData,
-};
 
 
 
@@ -122,18 +108,11 @@ const App = () => {
         <Route path="/admissions/scholarships" element={<ScholarshipsPage />} />
 
         {/* Departments */}
-        <Route 
-          path="/departments/desh" 
-          element={<DepartmentPage departmentData={feDepartmentData} />} 
-        />
-        <Route 
-          path="/departments/comp" 
-          element={<DepartmentPage departmentData={cseDepartmentData} />} 
-        />
-        {/* <Route path="/departments/mech" element={<MechanicalEnggPage />} />
-        <Route path="/departments/civil" element={<CivilEnggPage />} />
-        <Route path="/departments/ai-ds" element={<AiDsPage />} />
-        <Route path="/departments/cse-ds" element={<CseDsPage />} /> */}
+        <Route path="/departments/desh" element={<DepartmentPage departmentData={feDepartmentData} />} />
+        <Route path="/departments/comp" element={<DepartmentPage departmentData={cseDepartmentData} />} />
+        <Route path="/departments/mech" element={<DepartmentPage departmentData={mechDepartmentData} />} />
+        <Route path="/departments/civil" element={<DepartmentPage departmentData={civilDepartmentData} />} />
+        <Route path="/departments/ai-ds" element={<DepartmentPage departmentData={aidsDepartmentData} />} />
         
 
         {/* For Students */}
