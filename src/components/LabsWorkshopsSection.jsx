@@ -4,7 +4,8 @@ import { X } from "lucide-react";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
 
-const LabsWorkshopsSection = ({labsData}) => {
+// Accept `labsData` as a prop
+const LabsWorkshopsSection = ({ labsData }) => {
     const [filter, setFilter] = useState('All');
     const [modalItem, setModalItem] = useState(null);
     const filters = ['All', 'Physics', 'Chemistry', 'Programming'];
@@ -12,7 +13,7 @@ const LabsWorkshopsSection = ({labsData}) => {
     const filteredData = labsData.filter(item => filter === 'All' || item.type === filter);
     
     return (
-        <SectionWrapper id="labs">
+       <SectionWrapper id="labs">
             <SectionTitle>Labs & Workshops</SectionTitle>
             <div className="flex justify-center flex-wrap gap-2 mb-10">
                 {filters.map(f => (

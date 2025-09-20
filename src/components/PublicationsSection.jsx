@@ -4,15 +4,15 @@ import { ChevronDown, Search } from "lucide-react";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
 
-
-const PublicationsSection = ({publicationsData }) => {
+// Accept `publicationsData` as a prop
+const PublicationsSection = ({ publicationsData }) => {
     const [openIndex, setOpenIndex] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [filterTag, setFilterTag] = useState('All');
 
     const tags = ['All', 'SCI', 'Scopus', 'UGC'];
 
-    const filteredPublications = publicationsData
+     const filteredPublications = publicationsData
         .filter(p => filterTag === 'All' || p.tag === filterTag)
         .filter(p => 
             p.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
@@ -20,7 +20,7 @@ const PublicationsSection = ({publicationsData }) => {
         );
 
     return (
-        <SectionWrapper id="publications">
+          <SectionWrapper id="publications">
             <SectionTitle>Research & Publications</SectionTitle>
             <div className="max-w-4xl mx-auto space-y-3 p-4 bg-white rounded-xl shadow-md border border-gray-200">
                 <div className="flex flex-col sm:flex-row gap-4 mb-4">

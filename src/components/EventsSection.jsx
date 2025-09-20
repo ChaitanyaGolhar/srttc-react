@@ -3,12 +3,13 @@ import { motion } from "framer-motion";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
 
-const EventsSection = ({eventsData }) => {
+// Accept `eventsData` as a prop
+const EventsSection = ({ eventsData }) => {
     const [view, setView] = useState('upcoming');
     const [expandedEvent, setExpandedEvent] = useState(null);
 
     return (
-        <SectionWrapper id="events">
+       <SectionWrapper id="events">
             <SectionTitle>Events</SectionTitle>
             <div className="flex justify-center mb-8">
                 <div className="bg-gray-100 rounded-full p-1 flex border border-gray-200">
