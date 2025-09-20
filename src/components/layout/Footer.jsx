@@ -18,7 +18,7 @@ const InstagramIcon = (props) => <img src={instagramIcon} alt="Instagram" classN
 const academicsLinks = ["Departments", "Programs Offered", "SPPU Syllabus", "Academic Calendar"];
 const quickLinks = ["DTE Portal", "SPPU", "Online Grievance", "Student Feedback"];
 const socialLinks = [
-    { href: "#", label: "Facebook", icon: FacebookIcon },
+    { href: "Srttc Kamshet ", label: "Facebook", icon: FacebookIcon },
     { href: "#", label: "Twitter", icon: TwitterIcon },
     { href: "#", label: "LinkedIn", icon: LinkedinIcon },
     { href: "#", label: "Instagram", icon: InstagramIcon },
