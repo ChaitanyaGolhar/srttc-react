@@ -2,11 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
-// import { facultyData } from "../utils/constants"; // Adjust path if needed
 
 const FacultyCard = ({ member }) => {
-    return (
-        <motion.div
+    <motion.div
             className="group bg-white rounded-xl shadow-md overflow-hidden text-center transition-all duration-300 hover:shadow-xl hover:scale-105 border border-gray-100"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -27,10 +25,10 @@ const FacultyCard = ({ member }) => {
                 <p className="text-blue-600">{member.designation}</p>
             </div>
         </motion.div>
-    );
 };
 
-const FacultySection = () => (
+// Accept `facultyData` as a prop
+const FacultySection = ({ facultyData }) => (
     <SectionWrapper id="faculty">
         <SectionTitle>Our Esteemed Faculty</SectionTitle>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">

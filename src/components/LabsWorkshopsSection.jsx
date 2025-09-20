@@ -3,9 +3,8 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
-// import { labsData } from "../utils/constants"; // Adjust path if needed
 
-const LabsWorkshopsSection = () => {
+const LabsWorkshopsSection = ({labsData}) => {
     const [filter, setFilter] = useState('All');
     const [modalItem, setModalItem] = useState(null);
     const filters = ['All', 'Physics', 'Chemistry', 'Programming'];

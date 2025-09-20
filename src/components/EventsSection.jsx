@@ -2,9 +2,8 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
-// import { eventsData } from "../utils/constants"; // Adjust path if needed
 
-const EventsSection = () => {
+const EventsSection = ({eventsData }) => {
     const [view, setView] = useState('upcoming');
     const [expandedEvent, setExpandedEvent] = useState(null);
 

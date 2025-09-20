@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronDown, Search } from "lucide-react";
 import SectionWrapper from "./shared/SectionWrapper";
 import SectionTitle from "./shared/SectionTitle";
-// import { publicationsData } from "../utils/constants"; // Adjust path if needed
 
-const PublicationsSection = () => {
+
+const PublicationsSection = ({publicationsData }) => {
     const [openIndex, setOpenIndex] = useState(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [filterTag, setFilterTag] = useState('All');
