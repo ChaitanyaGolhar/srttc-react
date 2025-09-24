@@ -1,27 +1,27 @@
 import React, { useEffect, useRef, useCallback, useState } from 'react';
+// 1. Import useNavigate for navigation
+import { useNavigate } from 'react-router-dom';
 
 // --- IMPORT YOUR ICONS AND LOGO ---
 import facebookIcon from '../../assets/icons/facebook.svg';
 import twitterIcon from '../../assets/icons/twitter.svg';
 import linkedinIcon from '../../assets/icons/linkedin.svg';
 import instagramIcon from '../../assets/icons/instagram.svg';
-
+import logo from '../../assets/images/srttc-logo.png'; // Make sure the path to your logo is correct
 
 const FacebookIcon = (props) => <img src={facebookIcon} alt="Facebook" className="w-5 h-5" {...props} />;
 const TwitterIcon = (props) => <img src={twitterIcon} alt="Twitter" className="w-5 h-5" {...props} />;
 const LinkedinIcon = (props) => <img src={linkedinIcon} alt="LinkedIn" className="w-5 h-5" {...props} />;
 const InstagramIcon = (props) => <img src={instagramIcon} alt="Instagram" className="w-5 h-5" {...props} />;
 
-
-
 // --- DATA CONFIGURATION ---
 const academicsLinks = ["Departments", "Programs Offered", "SPPU Syllabus", "Academic Calendar"];
 const quickLinks = ["DTE Portal", "SPPU", "Online Grievance", "Student Feedback"];
 const socialLinks = [
-    { href: "Srttc Kamshet ", label: "Facebook", icon: FacebookIcon },
-    { href: "#", label: "Twitter", icon: TwitterIcon },
-    { href: "#", label: "LinkedIn", icon: LinkedinIcon },
-    { href: "#", label: "Instagram", icon: InstagramIcon },
+    { href: "https://www.facebook.com/profile.php?id=100009512947239", label: "Facebook", icon: FacebookIcon },
+    { href: "https://x.com/SumanPune", label: "Twitter", icon: TwitterIcon },
+    { href: "https://www.linkedin.com/in/srttc-tpo/", label: "LinkedIn", icon: LinkedinIcon },
+    { href: "https://www.instagram.com/srttc_official", label: "Instagram", icon: InstagramIcon },
 ];
 
 // --- REUSABLE SUB-COMPONENTS ---
@@ -42,10 +42,19 @@ const FooterColumn = ({ title, links }) => (
 
 // --- MAIN FOOTER COMPONENT ---
 const Footer = () => {
+    // 2. Initialize the navigate function from the hook
+    const navigate = useNavigate();
     const canvasRef = useRef(null);
     const containerRef = useRef(null);
     const mouse = useRef({ x: null, y: null });
     const [isVisible, setIsVisible] = useState(false);
+
+    // 3. Create a function to handle the button click
+    const handleContactClick = () => {
+        // This will navigate to your contact page.
+        // Make sure you have a route set up for '/contact'.
+        navigate('/contact');
+    };
 
     const handleMouseMove = useCallback((event) => {
         if (!canvasRef.current) return;
@@ -60,10 +69,10 @@ const Footer = () => {
             (entries) => {
                 if (entries[0].isIntersecting) {
                     setIsVisible(true);
-                    observer.disconnect(); // Animate only once
+                    observer.disconnect();
                 }
             },
-            { threshold: 0.1 } // Trigger when 10% of the footer is visible
+            { threshold: 0.1 }
         );
 
         if (containerRef.current) {
@@ -172,7 +181,8 @@ const Footer = () => {
     }, [handleMouseMove]);
 
     const mapQuery = "Suman Ramesh Tulsiani Technical Campus, Kamshet, Maharashtra, India";
-    const googleMapsUrl = `https://maps.google.com/?q=${encodeURIComponent(mapQuery)}`;
+    // Fixed Google Maps URL for the link
+    const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(mapQuery)}`;
     
     const getAnimationClass = (delay) => {
         return `transition-all duration-700 ${isVisible ? `opacity-100 translate-y-0 delay-${delay}` : 'opacity-0 translate-y-10'}`;
@@ -187,13 +197,13 @@ const Footer = () => {
                         <div className={getAnimationClass('0')}>
                             <div className="flex flex-col space-y-4">
                                 <div className="flex items-center space-x-3">
-                                    <img src="/logo.png" alt="SRTTC Logo" className="w-10 h-10 rounded-full" />
+                                    <img src={logo} alt="SRTTC Logo" className="w-10 h-10 rounded-full" />
                                     <span className="font-bold text-xl text-black tracking-wider">SRTTC</span>
                                 </div>
                                 <p className="text-sm leading-relaxed text-gray-700">An AICTE approved, NAAC 'B+' accredited institute dedicated to excellence in engineering education.</p>
                                 <div className="flex space-x-4 pt-2">
                                     {socialLinks.map(link => (
-                                        <a key={link.label} href={link.href} aria-label={link.label} className="text-gray-600 hover:text-black transform hover:-translate-y-1 transition-all duration-300">
+                                        <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" aria-label={link.label} className="text-gray-600 hover:text-black transform hover:-translate-y-1 transition-all duration-300">
                                             <link.icon />
                                         </a>
                                     ))}
@@ -208,7 +218,7 @@ const Footer = () => {
                         </div>
                         <div className={getAnimationClass('500')}>
                              <div>
-                                <h3 className="font-semibold text-lg text-gray-900 mb-4 tracking-wide">Contact Us</h3>
+                                <h3 className="font-semibold text-lg text-gray-900 mb-4 tracking-wide">Our Location</h3>
                                 <a 
                                     href={googleMapsUrl}
                                     target="_blank"
@@ -218,6 +228,7 @@ const Footer = () => {
                                     {mapQuery}
                                 </a>
                                 <div className="mt-4 rounded-lg shadow-md overflow-hidden">
+                                    {/* Fixed Google Maps embed URL */}
                                     <iframe 
                                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777.949203993676!2d73.53203557496896!3d18.75580583238394!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2abbfeb8600bb%3A0x4669673f97336d33!2sSuman%20Ramesh%20Tulsiani%20College%20Of%20Engineering%2C%20Maharashtra%20410405!5e0!3m2!1sen!2sin!4v1758187729949!5m2!1sen!2sin" 
                                         width="100%" 
@@ -228,7 +239,11 @@ const Footer = () => {
                                         referrerPolicy="no-referrer-when-downgrade"
                                     ></iframe>
                                 </div>
-                                <button className="mt-4 py-2 px-5 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 transition-all duration-300">
+                                {/* 4. Add the onClick handler to the button */}
+                                <button 
+                                    onClick={handleContactClick}
+                                    className="mt-4 w-full py-2 px-5 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-black focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-75 transition-all duration-300"
+                                >
                                     Contact Us
                                 </button>
                             </div>
