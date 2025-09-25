@@ -86,7 +86,7 @@ export default function App() {
                         <div className="absolute inset-0 bg-gradient-to-br from-sky-200 to-indigo-300 rounded-3xl transform rotate-6 transition-transform duration-500 group-hover:rotate-4 group-hover:scale-105"></div>
                         <div className="relative bg-slate-100 rounded-3xl shadow-lg aspect-square p-3">
                              <img
-                                src="https://placehold.co/400x400/E2E8F0/4A5568?text=Principal's\nPhoto"
+                                src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg/250px-Shah_Rukh_Khan_graces_the_launch_of_the_new_Santro.jpg"
                                 alt="Prof.(Dr.) Jaywant B. Sankpal, Principal"
                                 className="w-full h-full object-cover rounded-2xl"
                                 onError={(e) => e.target.src = 'https://placehold.co/400x400/E2E8F0/4A5568?text=Image+Not+Found'}

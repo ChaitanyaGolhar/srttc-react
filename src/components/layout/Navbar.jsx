@@ -9,11 +9,13 @@ const navLinks = [
     name: 'Our SRTTC',
     subMenu: [
       { name: 'About SRTTC', href: '/about' },
-      { name: 'Mission & Vision', href: '/vision' },
+      // { name: 'Mission & Vision', href: '/vision' },
       { name: 'Governing Body', href: '/governing-body' },
       { name: 'Principal’s Desk', href: '/principal-desk' },
       { name: 'Infrastructure', href: '/infrastructure' },
       { name: 'Institute Office', href: '/office' },
+      { name: 'Our Trust', href: '/our-trust' },
+     
     ],
   },
 
