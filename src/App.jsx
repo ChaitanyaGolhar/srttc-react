@@ -41,6 +41,7 @@ import PrincipalDeskPage from './pages/OurSRTTC/PrincipalDeskPage.jsx';
 import InfrastructurePage from './pages/OurSRTTC/InfrastructurePage.jsx';
 import OfficePage from './pages/OurSRTTC/OfficePage.jsx';
 import OurTrustPage from './pages/OurSRTTC/OurTrustPage.jsx';
+import ChairmanDeskPage from './pages/OurSRTTC/ChairmanDeskPage.jsx';
 
 // Academics
 import AcademicCalendarPage from './pages/Academics/AcademicCalendarPage.jsx';
@@ -96,6 +97,7 @@ const App = () => {
         <Route path="/infrastructure" element={<InfrastructurePage />} />
         <Route path="/office" element={<OfficePage />} />
     <Route path="/our-trust" element={<OurTrustPage />} />
+      <Route path="/chairman-desk" element={<ChairmanDeskPage />} />
 
         {/* Academics */}
         <Route path="/academics/calendar" element={<AcademicCalendarPage />} />

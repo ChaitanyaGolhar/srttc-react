@@ -11,14 +11,6 @@ const officeStaff = [
   { id: 6, name: 'Mr. Navnath Shinde', section: 'Store Incharge' },
 ];
 
-// --- Brainstorming & Design Choices ---
-// 1.  **Updated Content:** The page now includes a detailed introduction to the administrative departments and an updated staff list.
-// 2.  **Clearer Information:** The responsibilities of the Establishments Section are now in a list for better readability.
-// 3.  **Component-Based:** Each staff member is represented by a `StaffCard` component, promoting reusability and clean code.
-// 4.  **Visual Hierarchy:** Clear headings, consistent spacing, and subtle shadows create a professional look.
-// 5.  **Responsiveness:** The layout remains fully responsive for all devices.
-
-// --- Icon Components (as inline SVGs for simplicity) ---
 const UserIcon = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"

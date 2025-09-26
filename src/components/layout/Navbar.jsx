@@ -12,6 +12,7 @@ const navLinks = [
       // { name: 'Mission & Vision', href: '/vision' },
       { name: 'Governing Body', href: '/governing-body' },
       { name: 'Principal’s Desk', href: '/principal-desk' },
+      { name: 'Chairman’s Desk', href: '/chairman-desk' },
       { name: 'Infrastructure', href: '/infrastructure' },
       { name: 'Institute Office', href: '/office' },
       { name: 'Our Trust', href: '/our-trust' },
