@@ -94,7 +94,7 @@ export default function App() {
     {
       question: "How can I apply for admission to SRTTC?",
       answer:
-        "You can apply through the institute’s admission portal. Fill the application form, upload the required documents, and pay the prescribed fees. Check the Quick Links section on the website for the Admission Portal. Contact the college office for guidance in case you face issues. ",
+        " You can apply through the institute’s admission portal. Fill the application form, upload the required documents, and pay the prescribed fees. Check the Quick Links section on the website for the Admission Portal. Contact the college office for guidance in case you face issues. ",
     },
     {
       question: "What engineering programmes does SRTTC offer?",
