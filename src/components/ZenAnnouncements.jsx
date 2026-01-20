@@ -41,10 +41,10 @@ function useInterval(callback, delay) {
 }
 
 const sampleAnnouncements = [
-  { id: 1, text: "New Meditation and Mindfulness course starts next Monday.", link: "/courses/meditation" },
-  { id: 2, text: "Weekend Yoga retreat registration is now open to all members.", link: "/events/yoga-retreat" },
-  { id: 3, text: "Our main campus will be closed for the holiday on the 25th.", link: "/notices/holiday" },
-  { id: 4, text: "Join the 'Mindful Mornings' challenge, starting this month.", link: "/challenges/mindful-mornings" },
+{ id: 1, text: "College timing is from 8:30 AM to 3:30 PM for all departments.", link: "/announcements/college-timings" },
+{ id: 2, text: "Holiday will be observed every Saturday and Sunday each week.", link: "/announcements/weekly-holidays" },
+  // { id: 3, text: "Our main campus will be closed for the holiday on the 25th.", link: "/notices/holiday" },
+  // { id: 4, text: "Join the 'Mindful Mornings' challenge, starting this month.", link: "/challenges/mindful-mornings" },
 ];
 
 const announcementVariants = {
