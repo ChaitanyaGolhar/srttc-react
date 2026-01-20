@@ -231,16 +231,54 @@ RecruiterScrollerAdvanced.propTypes = {
 
 // --- Example Usage App ---
 
+// Import all company images
+import benzImage from '../assets/images/companies-images/benz.jpg';
+import bitwiseImage from '../assets/images/companies-images/bitwise.jpg';
+import bpclImage from '../assets/images/companies-images/bpcl.jpg';
+import capgeminiImage from '../assets/images/companies-images/capgemini.jpg';
+import ciplaImage from '../assets/images/companies-images/cipla.jpg';
+import cognizantImage from '../assets/images/companies-images/cognizant.jpg';
+import cyientImage from '../assets/images/companies-images/cyient.jpg';
+import forceImage from '../assets/images/companies-images/force.jpg';
+import gmImage from '../assets/images/companies-images/gm.jpg';
+import infosysImage from '../assets/images/companies-images/infosys.jpg';
+import jkumarImage from '../assets/images/companies-images/jkumar.jpg';
+import knestImage from '../assets/images/companies-images/knest.jpg';
+import mahindraImage from '../assets/images/companies-images/mahindra.jpg';
+import mphasisImage from '../assets/images/companies-images/mphasis.jpg';
+import nvidiaImage from '../assets/images/companies-images/nvidia.jpg';
+import skumarImage from '../assets/images/companies-images/skumar.jpg';
+import syntelImage from '../assets/images/companies-images/syntel.jpg';
+import tataImage from '../assets/images/companies-images/tata.jpg';
+import tcsImage from '../assets/images/companies-images/tcs.jpg';
+import techMahindraImage from '../assets/images/companies-images/tech-mahinda.jpg';
+import varrocImage from '../assets/images/companies-images/varroc.jpg';
+import wiproImage from '../assets/images/companies-images/Wipro.jpg';
+
 const Recruiters = () => {
     const logoData = [
-        { name: "Google", src: "https://cdn.worldvectorlogo.com/logos/google-1-1.svg", href: "#" },
-        { name: "Microsoft", src: "https://cdn.worldvectorlogo.com/logos/microsoft-5.svg", href: "#" },
-        { name: "Amazon", src: "https://cdn.worldvectorlogo.com/logos/amazon-2.svg", href: "#" },
-        { name: "Meta", src: "https://cdn.worldvectorlogo.com/logos/meta-1.svg", href: "#" },
-        { name: "Apple", src: "https://cdn.worldvectorlogo.com/logos/apple-13.svg", href: "#" },
-        { name: "Netflix", src: "https://cdn.worldvectorlogo.com/logos/netflix-3.svg", href: "#" },
-        { name: "NVIDIA", src: "https://cdn.worldvectorlogo.com/logos/nvidia.svg", href: "#" },
-        { name: "Salesforce", src: "https://cdn.worldvectorlogo.com/logos/salesforce-2.svg", href: "#" }
+        { name: "Mercedes-Benz", src: benzImage, href: "#" },
+        { name: "Bitwise", src: bitwiseImage, href: "#" },
+        { name: "BPCL", src: bpclImage, href: "#" },
+        { name: "Capgemini", src: capgeminiImage, href: "#" },
+        { name: "Cipla", src: ciplaImage, href: "#" },
+        { name: "Cognizant", src: cognizantImage, href: "#" },
+        { name: "Cyient", src: cyientImage, href: "#" },
+        { name: "Force Motors", src: forceImage, href: "#" },
+        { name: "General Motors", src: gmImage, href: "#" },
+        { name: "Infosys", src: infosysImage, href: "#" },
+        { name: "J. Kumar", src: jkumarImage, href: "#" },
+        { name: "Knest", src: knestImage, href: "#" },
+        { name: "Mahindra", src: mahindraImage, href: "#" },
+        { name: "Mphasis", src: mphasisImage, href: "#" },
+        { name: "NVIDIA", src: nvidiaImage, href: "#" },
+        { name: "S. Kumar Group", src: skumarImage, href: "#" },
+        { name: "Syntel", src: syntelImage, href: "#" },
+        { name: "Tata", src: tataImage, href: "#" },
+        { name: "TCS", src: tcsImage, href: "#" },
+        { name: "Tech Mahindra", src: techMahindraImage, href: "#" },
+        { name: "Varroc", src: varrocImage, href: "#" },
+        { name: "Wipro", src: wiproImage, href: "#" }
     ];
 
     return (
